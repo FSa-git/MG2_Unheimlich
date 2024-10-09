@@ -1,0 +1,6 @@
+@use 'variables';
+
+@mixin heading-font {
+    font-family: variables.$font;
+    
+}

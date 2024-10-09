@@ -1,0 +1,31 @@
+@use 'variables';
+@use 'typo';
+
+html{
+    background-image: linear-gradient(
+        to top, black 50%, variables.$color_sub 100%,
+    );
+}
+
+h1{
+    font-family: variables.$font_special;
+}
+
+.btn-style503 {
+
+    border-radius: 15%;
+
+    $btn-color: white;
+    $btn-hover-color: #D90404;
+
+    width: 150px;
+    border-color: $btn-color;
+    color: $btn-color;
+    transition: all 0.5s;
+    &:hover {
+      box-shadow: inset 5em 0 0 0 $btn-hover-color,
+        inset -5em 0 0 0 $btn-hover-color;
+      border-color: $btn-hover-color;
+      color: #fff;
+    }
+  }
