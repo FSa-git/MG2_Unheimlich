@@ -1,49 +1,26 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap");
-.h1-dark {
-  color: #D90404;
-  font-size: 1.8em;
-}
-
-.h1-light {
-  color: #DFD6D6;
-  font-size: 1.8em;
-}
-
-.h2-dark {
-  color: #D90404;
-  font-size: 1.6em;
-}
-
-.h2-light {
-  color: #DFD6D6;
-  font-size: 1.6em;
-}
-
-.h3-dark {
-  color: #D90404;
-  font-size: 1.4em;
-}
-
-.h3-light {
-  color: #DFD6D6;
-  font-size: 1.4em;
-}
-
-.h4-dark {
-  color: #D90404;
-  font-size: 1.2em;
-}
-
-.h4-light {
-  color: #DFD6D6;
-  font-size: 1.2em;
-}
-
-h1 {
+#title {
   font-family: "Creepster";
-  font-size: 2.5rem; /* Schriftgröße für h1 */
+  font-size: 80px;
+}
+
+/* Schriftgroesse für h1 bis h4 */
+h1 {
+  font-size: 80px;
+}
+
+h2 {
+  font-size: 60px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 20px;
 }
 
 p {
@@ -51,9 +28,10 @@ p {
 }
 
 html, body {
-  height: 100%;
-  margin: 0;
   color: #DFD6D6;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 div {
@@ -61,9 +39,11 @@ div {
   border: 5px solid;
   margin-bottom: 25px;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px;
 }
 
 body {
@@ -83,4 +63,16 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+input {
+  width: 25%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+input:focus {
+  outline: none;
+  border: 3px solid #D90404;
 }/*# sourceMappingURL=main.css.map */
