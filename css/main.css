@@ -1,42 +1,106 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap");
-#title {
+.title {
   font-family: "Creepster";
-  font-size: 80px;
+  font-size: 150px;
+  color: white;
 }
 
 /* Schriftgroesse für h1 bis h4 */
-h1 {
+.h1-dark {
+  color: #D90404;
   font-size: 80px;
+  margin: 10px;
 }
 
-h2 {
+.h1-light {
+  color: #DFD6D6;
+  font-size: 80px;
+  margin: 10px;
+}
+
+.h2-dark {
+  color: #D90404;
   font-size: 60px;
+  margin: 10px;
 }
 
-h3 {
+.h2-light {
+  color: #DFD6D6;
+  font-size: 60px;
+  margin: 10px;
+}
+
+.h3-dark {
+  color: #D90404;
   font-size: 40px;
+  margin: 10px;
 }
 
-h4 {
+.h3-light {
+  color: #DFD6D6;
+  font-size: 40px;
+  margin: 10px;
+}
+
+.h4-dark {
+  color: #D90404;
   font-size: 20px;
+  margin: 10px;
+}
+
+.h4-light {
+  color: #DFD6D6;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.h5-dark {
+  color: #D90404;
+  font-size: 10px;
+  margin: 10px;
+}
+
+.h5-light {
+  color: #DFD6D6;
+  font-size: 10px;
+  margin: 10px;
+}
+
+.h6-dark {
+  color: #D90404;
+  font-size: 5px;
+  margin: 10px;
+}
+
+.h6-light {
+  color: #DFD6D6;
+  font-size: 5px;
+  margin: 10px;
 }
 
 p {
   font-size: 1.2rem; /* Schriftgröße für p */
 }
 
+@keyframes growShrink {
+  0% {
+    width: 20%; /* Anfangsbreite */
+  }
+  50% {
+    width: 80%; /* Maximale Breite */
+  }
+  100% {
+    width: 20%; /* Zurück zur Anfangsbreite */
+  }
+}
 html, body {
   color: #DFD6D6;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+  font-family: "Cinzel Decorative";
 }
 
 div {
-  border-color: white;
-  border: 5px solid;
   margin-bottom: 25px;
   width: 100%;
   height: 100%;
@@ -44,13 +108,57 @@ div {
   justify-content: center;
   align-items: center;
   padding: 15px;
+  font-family: "Cinzel Decorative";
+}
+div .combined {
+  display: flex;
+  flex-direction: column;
+}
+div .combined DIV:nth-child(2n+1) {
+  margin-bottom: 0;
+}
+div #hDiv, div .buttonDiv {
+  display: flex;
+  flex-direction: column;
+}
+div #hDiv BUTTON, div .buttonDiv BUTTON {
+  margin-bottom: 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  height: 40px;
+  width: 180px;
+  font-family: "Cinzel Decorative";
+}
+div #hDiv BUTTON:nth-child(2n), div .buttonDiv BUTTON:nth-child(2n) {
+  background: #DFD6D6;
+  color: #0D0D0D;
+  transition: font-weight, transform ease 0.5s;
+}
+div #hDiv BUTTON:nth-child(2n):hover, div .buttonDiv BUTTON:nth-child(2n):hover {
+  background-color: #b29d9d;
+  transform: scale(1.2);
+  font-weight: bold;
+}
+div #hDiv BUTTON:nth-child(2n+1), div .buttonDiv BUTTON:nth-child(2n+1) {
+  background: #730217;
+  color: #DFD6D6;
+  transition: font-weight, transform ease 0.5s;
+}
+div #hDiv BUTTON:nth-child(2n+1):hover, div .buttonDiv BUTTON:nth-child(2n+1):hover {
+  background-color: #a50321;
+  transform: scale(1.2);
+  font-weight: bold;
+}
+div #buttonsDiv, div #hDiv, div #inputDiv {
+  margin-bottom: 100px;
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to top, black 50%, #730217 100%);
+  background-image: linear-gradient(to top, black 40%, #730217 100%);
 }
 
 .container {
@@ -60,19 +168,47 @@ body {
   align-items: center;
   width: 100%;
 }
+.container p {
+  color: #DFD6D6;
+  font-size: 2em;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 5px;
+}
 
 * {
   box-sizing: border-box;
 }
 
 input {
-  width: 25%;
+  width: 50%;
   padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
-  border: none;
+  border: 3px solid #0D0D0D;
 }
 input:focus {
   outline: none;
   border: 3px solid #D90404;
+}
+
+p {
+  padding: 20px;
+}
+p.centered {
+  text-align: center;
+}
+
+q {
+  font-size: 22px;
+}
+
+#qouteLine {
+  border-color: #D90404;
+  width: 80%;
+  animation: growShrink 3s infinite ease-in-out;
 }/*# sourceMappingURL=main.css.map */

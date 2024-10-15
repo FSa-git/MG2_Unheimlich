@@ -4,7 +4,9 @@ $headings: (
     h1: 80px,
     h2: 60px,
     h3: 40px,
-    h4: 20px
+    h4: 20px,
+    h5: 10px,
+    h6: 5px
 );
 
 // @for $i from 1 through 4 {
@@ -19,15 +21,23 @@ $headings: (
 //     }
 // }
 
-#title {
+.title {
     font-family: variables.$font_special;
-    font-size: 80px;
+    font-size: 150px;
+    color:  white;
 }
 
 /* Schriftgroesse für h1 bis h4 */
 @each $heading, $size in $headings {
-    #{$heading} {
+    .#{$heading}-dark {
+        color: variables.$color_font;
         font-size: $size;
+        margin: 10px;
+    }
+    .#{$heading}-light {
+        color: variables.$color_font2;
+        font-size: $size;
+        margin: 10px;
     }
 }
 
