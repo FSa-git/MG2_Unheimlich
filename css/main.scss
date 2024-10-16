@@ -1,23 +1,94 @@
 @use 'variables';
 @use 'typo';
 
+
+@keyframes growShrink {
+    0% {
+      width: 20%; /* Anfangsbreite */
+    }
+    50% {
+      width: 80%; /* Maximale Breite */
+    }
+    100% {
+      width: 20%; /* Zurück zur Anfangsbreite */
+    }
+  }
+
 html, body {
     color: variables.$color_font2;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+    font-family: variables.$font;
 }
 
 div {
-  border-color: white;
-  border: 5px solid;
-  margin-bottom: 25px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
+    margin-bottom: 25px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    
+    font-family: variables.$font;
+
+    .combined {
+        display: flex;
+        flex-direction: column;
+        
+        DIV:nth-child(2n + 1){
+            margin-bottom: 0;
+        }
+    }
+
+    #hDiv, .buttonDiv{
+        display: flex;
+        flex-direction: column;
+
+        BUTTON, A{
+            margin-bottom: 10px;
+            font-size: 20px;
+            border: none;
+            border-radius: 15px;
+            height: 40px;
+            width: 180px;
+            font-family: variables.$font;
+
+            &:nth-child(2n) {
+                background: variables.$color_font2;
+                color: variables.$color_main;
+                transition: font-weight, transform ease 0.5s;
+                &:hover {
+                    background-color: darken($color: variables.$color_font2, $amount: 20%);
+                    transform: scale(1.2);
+                    font-weight: bold;
+                }
+            }
+
+            &:nth-child(2n + 1) {
+                background: variables.$color_sub;
+                color: variables.$color_font2;
+                transition: font-weight, transform ease 0.5s;
+
+                &:hover {
+                    background-color: lighten($color: variables.$color_sub, $amount: 10%);
+                    transform: scale(1.2);
+                    font-weight: bold;
+                }
+            }
+        }
+
+        A {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-decoration: none;
+        }
+    }
+
+    #buttonsDiv, #hDiv, #inputDiv {
+        margin-bottom: 100px;
+    }
+
 }
 
 body {
@@ -27,7 +98,7 @@ body {
 
     // Hintergrund 
     background-image: linear-gradient(
-        to top, black 50%, variables.$color_sub 100%
+        to top, black 40%, variables.$color_sub 100%
     );
 }
 
@@ -37,6 +108,18 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+
+    p{
+        color: variables.$color_font2;
+        font-size: 2em;
+    }
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 5px;
 }
 
 * {
@@ -44,14 +127,73 @@ body {
 }
 
 input {
-    width: 25%;
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
-    border: none;
+    border: 3px solid variables.$color_main ;
 
     &:focus {
         outline: none;
         border: 3px solid variables.$color_font;
+    }
+
+    &#example {
+        width: 50%;
+    }
+
+    &#answer {
+        width: 100%;
+    }
+}
+
+p{
+    padding: 20px;
+
+    &.centered{
+        text-align: center;
+    }
+}
+
+q{
+    font-size: 22px;
+}
+
+#qouteLine{
+    border-color: variables.$color_font;
+    width: 80%;
+    animation: growShrink 3s infinite ease-in-out; 
+}
+
+.radio-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #options {
+        display: block;
+        margin-bottom: 0;
+    }
+}
+
+#horror-table{
+    width: 80%;
+    border-collapse: collapse;
+    font-size: 20px;
+    text-align: center;
+
+    margin-bottom: 300px;
+
+    TH, TD {
+        border: white 1px solid;
+        padding: 20px;
+
+        &:hover {
+            background-color: lighten($color: variables.$color_main, $amount: 10%)
+        }
+
+        &.red {       
+            color: variables.$color_font;
+            font-size: 25px;
+        }
     }
 }

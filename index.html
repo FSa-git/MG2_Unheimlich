@@ -35,7 +35,7 @@
             </div>
         </div>
         <div id="inputDiv">
-            <input type="text">
+            <input type="text" id="example">
         </div>
         <div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga culpa modi exercitationem quos inventore quasi placeat maiores earum repellendus pariatur, dolore animi odit sed odio accusamus molestiae corrupti esse officiis.</p>
@@ -57,9 +57,50 @@
                 EYEYEEYEYEYEYEYEYEEYEYEYEYEYEYEEYEYEYEYEYEYEEYEYEYEYEYE</p>
             </diV>
         </div>
-
         <div>
-            <form>
+            <table id="horror-table">
+                <tr>
+                    <th>Hast du Angst vor...?</th>
+                    <th>Dann hast du</th>
+                </tr>
+                <tr>
+                    <td>Spinnen</td>
+                    <td>Arachnophobie</td>
+                </tr>
+                <tr>
+                    <td>Clowns</td>
+                    <td>Coulrophobie</td>
+                </tr>
+                <tr>
+                    <td>Dunkelheit</td>
+                    <td>Nyktophobie</td>
+                </tr>
+                <tr>
+                    <td>Blut</td>
+                    <td>Haematophobie</td>
+                </tr>
+                <tr>
+                    <td class="red">dem Tod</td>
+                    <td class="red">jetzt die Wahl zu treffen... !</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <form class="radio-form">
+                <h3 class="h3-dark">Wollen sie sterben?</h3>
+                <div id="options">
+                    <input type="radio" value="JA" id="radio-yes" name="radio" class="radio-input">
+                    <label for="radio-yes">JA</label>
+                    <br>
+                    <input type="radio" value="NEIN" id="radio-no" name="radio" class="radio-input">
+                    <label for="radio-no">NEIN</label>
+                </div>
+
+                <label>Wie?</label>
+                <input type="text" placeholder="..." name="answer" id="answer">
+                <div class="buttonDiv">
+                    <a type="button" href="death.html">Senden</a>
+                </div>
             </form>
         </div>
         <div class="combined">

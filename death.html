@@ -1,0 +1,50 @@
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer</title>
+
+  <style>
+    html {
+        background-color: black;
+        color: white;
+        height: 100vh;
+    }
+
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+        height: 100vh;
+    }
+
+    p {
+        font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<p id="timer">300</p>
+<p id="text">..Sekunden zu leben übrig!</p>
+
+<script>
+  let timeLeft = 300;
+  
+  function countdown() {
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      document.getElementById("timer").innerHTML = "TOT";
+      document.getElementById("text").innerHTML = "";
+    } else {
+      document.getElementById("timer").innerHTML = timeLeft;
+      timeLeft--;
+    }
+  }
+
+  let timerInterval = setInterval(countdown, 1000);
+</script>
+
+</body>
+</html>
