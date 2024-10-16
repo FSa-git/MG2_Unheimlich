@@ -5,6 +5,20 @@
   font-family: "Creepster";
   font-size: 150px;
   color: white;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+}
+.title:hover {
+  text-shadow: 4px 4px 10px #0D0D0D;
+  letter-spacing: 3px;
+  transition: all 0.3s ease 0s;
+}
+.title.mol:hover {
+  text-shadow: 4px 4px 10px #D90404;
+  letter-spacing: 3px;
+  transition: all 0.3s ease 0s;
 }
 
 /* Schriftgroesse für h1 bis h4 */
@@ -121,7 +135,8 @@ div #hDiv, div .buttonDiv {
   display: flex;
   flex-direction: column;
 }
-div #hDiv BUTTON, div .buttonDiv BUTTON {
+div #hDiv BUTTON, div #hDiv A, div .buttonDiv BUTTON, div .buttonDiv A {
+  cursor: pointer;
   margin-bottom: 10px;
   font-size: 20px;
   border: none;
@@ -130,25 +145,31 @@ div #hDiv BUTTON, div .buttonDiv BUTTON {
   width: 180px;
   font-family: "Cinzel Decorative";
 }
-div #hDiv BUTTON:nth-child(2n), div .buttonDiv BUTTON:nth-child(2n) {
+div #hDiv BUTTON:nth-child(2n), div #hDiv A:nth-child(2n), div .buttonDiv BUTTON:nth-child(2n), div .buttonDiv A:nth-child(2n) {
   background: #DFD6D6;
   color: #0D0D0D;
   transition: font-weight, transform ease 0.5s;
 }
-div #hDiv BUTTON:nth-child(2n):hover, div .buttonDiv BUTTON:nth-child(2n):hover {
+div #hDiv BUTTON:nth-child(2n):hover, div #hDiv A:nth-child(2n):hover, div .buttonDiv BUTTON:nth-child(2n):hover, div .buttonDiv A:nth-child(2n):hover {
   background-color: #b29d9d;
   transform: scale(1.2);
   font-weight: bold;
 }
-div #hDiv BUTTON:nth-child(2n+1), div .buttonDiv BUTTON:nth-child(2n+1) {
+div #hDiv BUTTON:nth-child(2n+1), div #hDiv A:nth-child(2n+1), div .buttonDiv BUTTON:nth-child(2n+1), div .buttonDiv A:nth-child(2n+1) {
   background: #730217;
   color: #DFD6D6;
   transition: font-weight, transform ease 0.5s;
 }
-div #hDiv BUTTON:nth-child(2n+1):hover, div .buttonDiv BUTTON:nth-child(2n+1):hover {
+div #hDiv BUTTON:nth-child(2n+1):hover, div #hDiv A:nth-child(2n+1):hover, div .buttonDiv BUTTON:nth-child(2n+1):hover, div .buttonDiv A:nth-child(2n+1):hover {
   background-color: #a50321;
   transform: scale(1.2);
   font-weight: bold;
+}
+div #hDiv A, div .buttonDiv A {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 div #buttonsDiv, div #hDiv, div #inputDiv {
   margin-bottom: 100px;
@@ -185,7 +206,6 @@ body {
 }
 
 input {
-  width: 50%;
   padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
@@ -194,6 +214,46 @@ input {
 input:focus {
   outline: none;
   border: 3px solid #D90404;
+}
+input#example {
+  width: 50%;
+}
+input#answer {
+  width: 100%;
+}
+
+input[type=radio] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 5px solid #0D0D0D;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+input[type=radio]:checked {
+  background-color: #0D0D0D;
+}
+input[type=radio]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 13, 13, 0.5);
+}
+input[type=radio]:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #D90404;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+input[type=radio]:checked:before {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 p {
@@ -210,5 +270,34 @@ q {
 #qouteLine {
   border-color: #D90404;
   width: 80%;
-  animation: growShrink 3s infinite ease-in-out;
+  animation: growShrink 8s infinite ease-in-out;
+}
+
+.radio-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.radio-form #options {
+  display: block;
+  margin-bottom: 0;
+}
+
+#horror-table {
+  width: 80%;
+  border-collapse: collapse;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 300px;
+}
+#horror-table TH, #horror-table TD {
+  border: white 1px solid;
+  padding: 20px;
+}
+#horror-table TH:hover, #horror-table TD:hover {
+  background-color: #272727;
+}
+#horror-table TH.red, #horror-table TD.red {
+  color: #D90404;
+  font-size: 25px;
 }/*# sourceMappingURL=main.css.map */

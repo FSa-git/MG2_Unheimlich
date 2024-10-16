@@ -9,22 +9,26 @@ $headings: (
     h6: 5px
 );
 
-// @for $i from 1 through 4 {
-//     .h#{$i}-dark {
-//         color: variables.$color_font;
-//         font-size: 2em - ($i * 0.2);
-//     }
-
-//     .h#{$i}-light {
-//         color: variables.$color_font2;
-//         font-size: 2em - ($i * 0.2);
-//     }
-// }
-
 .title {
     font-family: variables.$font_special;
     font-size: 150px;
-    color:  white;
+    color: white;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+        text-shadow: 4px 4px 10px variables.$color_main;
+        letter-spacing: 3px;
+        transition: all 0.3s ease 0s;   
+    }
+    
+    &.mol:hover{
+        text-shadow: 4px 4px 10px variables.$color_font;
+        letter-spacing: 3px;
+        transition: all 0.3s ease 0s;   
+    }
 }
 
 /* Schriftgroesse für h1 bis h4 */
