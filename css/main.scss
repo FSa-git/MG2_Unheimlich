@@ -225,14 +225,47 @@ q{
     TH, TD {
         border: white 1px solid;
         padding: 20px;
-
-        &:hover {
-            background-color: lighten($color: variables.$color_main, $amount: 10%)
+    }
+        tr {
+            &:hover {
+                background-color: lighten($color: variables.$color_main, $amount: 10%);
+            }
         }
 
-        &.red {       
+        td.red {       
             color: variables.$color_font;
             font-size: 25px;
+        }
+    }
+
+.image-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+
+    .image-item {
+        text-align: center;
+        width: 30%;
+
+        img {
+            width: 100%; /* Breite des Containers */
+            height: 300px; /* Feste Höhe */
+            object-fit: cover; /* Bild wird bei Bedarf beschnitten */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        &:hover img {
+            cursor: pointer;
+            transform: scale(1.05);
         }
     }
 }

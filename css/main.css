@@ -294,10 +294,38 @@ q {
   border: white 1px solid;
   padding: 20px;
 }
-#horror-table TH:hover, #horror-table TD:hover {
+#horror-table tr:hover {
   background-color: #272727;
 }
-#horror-table TH.red, #horror-table TD.red {
+#horror-table td.red {
   color: #D90404;
   font-size: 25px;
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+.image-gallery .image-item {
+  text-align: center;
+  width: 30%;
+}
+.image-gallery .image-item img {
+  width: 100%; /* Breite des Containers */
+  height: 300px; /* Feste Höhe */
+  object-fit: cover; /* Bild wird bei Bedarf beschnitten */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.image-gallery .image-item p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+.image-gallery .image-item:hover img {
+  cursor: pointer;
+  transform: scale(1.05);
 }/*# sourceMappingURL=main.css.map */
