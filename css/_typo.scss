@@ -45,6 +45,15 @@ $headings: (
     }
 }
 
-p {
-    font-size: 1.2rem; /* Schriftgröße für p */
+p{
+    padding: 20px;
+    font-size: 1.2rem;
+
+    &.centered{
+        text-align: center;
+    }
+}
+
+q{
+    font-size: 22px;
 }

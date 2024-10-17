@@ -95,7 +95,15 @@
 }
 
 p {
-  font-size: 1.2rem; /* Schriftgröße für p */
+  padding: 20px;
+  font-size: 1.2rem;
+}
+p.centered {
+  text-align: center;
+}
+
+q {
+  font-size: 22px;
 }
 
 @keyframes growShrink {
@@ -176,18 +184,57 @@ div #buttonsDiv, div #hDiv, div #inputDiv {
   margin-bottom: 100px;
 }
 
+#hDiv, .buttonDiv {
+  display: flex;
+  flex-direction: column;
+}
+#hDiv button, .buttonDiv button {
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  height: 40px;
+  width: 180px;
+  font-family: "Cinzel Decorative";
+  transition: font-weight, transform ease 0.5s;
+}
+#hDiv button.btn-submit, .buttonDiv button.btn-submit {
+  background: #0D0D0D;
+  color: #DFD6D6;
+}
+#hDiv button.btn-submit:hover, .buttonDiv button.btn-submit:hover {
+  background-color: black;
+  transform: scale(1.05);
+  font-weight: bold;
+}
+#hDiv button.btn-close, .buttonDiv button.btn-close {
+  background: #DFD6D6;
+  color: #0D0D0D;
+}
+#hDiv button.btn-close:hover, .buttonDiv button.btn-close:hover {
+  background-color: #c9b9b9;
+  transform: scale(1.05);
+  font-weight: bold;
+}
+
+#buttonsDiv, #hDiv, #inputDiv {
+  margin-bottom: 100px;
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   background-image: linear-gradient(to top, black 40%, #730217 100%);
 }
 
 .container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100%;
 }
 .container p {
@@ -197,13 +244,11 @@ body {
 
 #header {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   height: 100vh;
   margin-top: 5px;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 input {
@@ -232,7 +277,7 @@ input[type=radio] {
   position: relative;
   margin-right: 10px;
   cursor: pointer;
-  vertical-align: middle; /* Fügt die Radio-Buttons in die Mitte der Label-Textlinie ein */
+  vertical-align: middle;
 }
 input[type=radio]:checked {
   background-color: #0D0D0D;
@@ -260,24 +305,15 @@ input[type=radio]:checked:before {
 
 .radio-form #options {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   gap: 10px; /* Abstand zwischen den Radio-Optionen */
 }
 
 .radio-form label {
   margin-left: 0;
   cursor: pointer;
-}
-
-p {
-  padding: 20px;
-}
-p.centered {
-  text-align: center;
-}
-
-q {
-  font-size: 22px;
 }
 
 #qouteLine {
@@ -288,8 +324,9 @@ q {
 
 .radio-form {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .radio-form #options {
   display: block;
@@ -327,7 +364,7 @@ q {
   width: 30%;
 }
 .image-gallery .image-item img {
-  width: 100%; /* Breite des Containers */
+  width: 100%;
   height: 300px; /* Feste Höhe */
   object-fit: cover; /* Bild wird bei Bedarf beschnitten */
   border-radius: 10px;

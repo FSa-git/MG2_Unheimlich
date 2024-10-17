@@ -2,7 +2,6 @@
 @use 'typo';
 @use 'mixins';
 
-
 @keyframes growShrink {
     0% {
       width: 20%; /* Anfangsbreite */
@@ -13,7 +12,14 @@
     100% {
       width: 20%; /* Zurück zur Anfangsbreite */
     }
-  }
+}
+
+@mixin flex-center($direction: row){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
 
 html, body {
     scroll-behavior: smooth;
@@ -94,10 +100,51 @@ div {
 
 }
 
-body {
+#hDiv, .buttonDiv {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+
+    button {
+        cursor: pointer;
+        margin-bottom: 10px;
+        font-size: 20px;
+        border: none;
+        border-radius: 15px;
+        height: 40px;
+        width: 180px;
+        font-family: variables.$font;
+        transition: font-weight, transform ease 0.5s;
+
+        &.btn-submit {
+            background: variables.$color_main; // Farbe für Submit-Button
+            color: variables.$color_font2;
+
+            &:hover {
+                background-color: darken(variables.$color_main, 10%);
+                transform: scale(1.05);
+                font-weight: bold;
+            }
+        }
+
+        &.btn-close {
+            background: variables.$color_font2; // Farbe für Close-Button
+            color: variables.$color_main;
+
+            &:hover {
+                background-color: darken(variables.$color_font2, 10%);
+                transform: scale(1.05);
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+#buttonsDiv, #hDiv, #inputDiv {
+    margin-bottom: 100px;
+}
+
+body {
+    @include flex-center();
 
     // Hintergrund 
     background-image: linear-gradient(
@@ -106,10 +153,7 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-center(column);
     width: 100%;
 
     p{
@@ -119,14 +163,9 @@ body {
 }
 
 #header {
-    display: flex;
-    flex-direction: column;
+    @include flex-center(column);
     height: 100vh;
     margin-top: 5px;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 input {
@@ -158,7 +197,7 @@ input[type="radio"] {
     position: relative;
     margin-right: 10px;
     cursor: pointer;
-    vertical-align: middle; /* Fügt die Radio-Buttons in die Mitte der Label-Textlinie ein */
+    vertical-align: middle;
 
     &:checked {
         background-color: variables.$color_main;
@@ -189,26 +228,13 @@ input[type="radio"] {
 }
 
 .radio-form #options {
-    display: flex;
-    flex-direction: column;
+    @include flex-center();
     gap: 10px; /* Abstand zwischen den Radio-Optionen */
 }
 
 .radio-form label {
     margin-left: 0;
     cursor: pointer;
-}
-
-p{
-    padding: 20px;
-
-    &.centered{
-        text-align: center;
-    }
-}
-
-q{
-    font-size: 22px;
 }
 
 #qouteLine{
@@ -218,10 +244,7 @@ q{
 }
 
 .radio-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+    @include flex-center(column);
     #options {
         display: block;
         margin-bottom: 0;
@@ -264,7 +287,7 @@ q{
         width: 30%;
 
         img {
-            width: 100%; /* Breite des Containers */
+            width: 100%; 
             height: 300px; /* Feste Höhe */
             object-fit: cover; /* Bild wird bei Bedarf beschnitten */
             border-radius: 10px;
@@ -287,27 +310,3 @@ q{
         }
     }
 }
-
-// $gallery-images : (
-//     (eyes, png, "A lot of eyes"),
-//     (skull, png, "Skull"),
-//     (horror_house, png, "Dark places"),
-// );
-
-// @each $image in $gallery-images {
-//     $image-name: nth($image, 1);
-//     $image-format: nth($image, 2);
-//     $image-caption: nth($image, 3);
-
-//     .image-#{$image-name}{
-//         img {
-//             background: url("/images/#{$image-name}.#{$image-format}") no-repeat center center;
-//             width: 100%;
-//             height: 300px;
-//             object-fit: cover;
-//         }
-//         figcaption {
-//             content: "#{$image-caption}";
-//         }
-//     }
-// }
