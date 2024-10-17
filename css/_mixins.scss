@@ -3,3 +3,10 @@
 @mixin heading-font {
     font-family: variables.$font;   
 }
+
+@mixin flex-center($direction: row){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}

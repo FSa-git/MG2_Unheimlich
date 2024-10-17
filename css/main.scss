@@ -1,5 +1,6 @@
 @use 'variables';
 @use 'typo';
+@use 'mixins';
 
 
 @keyframes growShrink {
@@ -15,6 +16,7 @@
   }
 
 html, body {
+    scroll-behavior: smooth;
     color: variables.$color_font2;
     font-family: variables.$font;
 }
@@ -152,10 +154,11 @@ input[type="radio"] {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 5px solid variables.$color_main;
+    border: 5px solid variables.$color_font2;
     position: relative;
     margin-right: 10px;
     cursor: pointer;
+    vertical-align: middle; /* Fügt die Radio-Buttons in die Mitte der Label-Textlinie ein */
 
     &:checked {
         background-color: variables.$color_main;
@@ -183,6 +186,17 @@ input[type="radio"] {
     &:checked:before {
         transform: translate(-50%, -50%) scale(1);
     }
+}
+
+.radio-form #options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Abstand zwischen den Radio-Optionen */
+}
+
+.radio-form label {
+    margin-left: 0;
+    cursor: pointer;
 }
 
 p{
@@ -235,6 +249,7 @@ q{
         td.red {       
             color: variables.$color_font;
             font-size: 25px;
+            font-weight: bold;
         }
     }
 
@@ -257,15 +272,42 @@ q{
             transition: transform 0.3s ease;
         }
 
-        p {
+        figcaption {
             margin-top: 10px;
-            font-size: 16px;
-            color: #333;
         }
 
         &:hover img {
             cursor: pointer;
             transform: scale(1.05);
         }
+        &:hover figcaption {
+            font-weight: bold;
+            color: variables.$color_sub;
+            text-decoration: underline;
+        }
     }
 }
+
+// $gallery-images : (
+//     (eyes, png, "A lot of eyes"),
+//     (skull, png, "Skull"),
+//     (horror_house, png, "Dark places"),
+// );
+
+// @each $image in $gallery-images {
+//     $image-name: nth($image, 1);
+//     $image-format: nth($image, 2);
+//     $image-caption: nth($image, 3);
+
+//     .image-#{$image-name}{
+//         img {
+//             background: url("/images/#{$image-name}.#{$image-format}") no-repeat center center;
+//             width: 100%;
+//             height: 300px;
+//             object-fit: cover;
+//         }
+//         figcaption {
+//             content: "#{$image-caption}";
+//         }
+//     }
+// }

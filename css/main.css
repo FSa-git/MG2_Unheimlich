@@ -110,6 +110,7 @@ p {
   }
 }
 html, body {
+  scroll-behavior: smooth;
   color: #DFD6D6;
   font-family: "Cinzel Decorative";
 }
@@ -227,10 +228,11 @@ input[type=radio] {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 5px solid #0D0D0D;
+  border: 5px solid #DFD6D6;
   position: relative;
   margin-right: 10px;
   cursor: pointer;
+  vertical-align: middle; /* Fügt die Radio-Buttons in die Mitte der Label-Textlinie ein */
 }
 input[type=radio]:checked {
   background-color: #0D0D0D;
@@ -254,6 +256,17 @@ input[type=radio]:before {
 }
 input[type=radio]:checked:before {
   transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-form #options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Abstand zwischen den Radio-Optionen */
+}
+
+.radio-form label {
+  margin-left: 0;
+  cursor: pointer;
 }
 
 p {
@@ -300,6 +313,7 @@ q {
 #horror-table td.red {
   color: #D90404;
   font-size: 25px;
+  font-weight: bold;
 }
 
 .image-gallery {
@@ -320,12 +334,15 @@ q {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
-.image-gallery .image-item p {
+.image-gallery .image-item figcaption {
   margin-top: 10px;
-  font-size: 16px;
-  color: #333;
 }
 .image-gallery .image-item:hover img {
   cursor: pointer;
   transform: scale(1.05);
+}
+.image-gallery .image-item:hover figcaption {
+  font-weight: bold;
+  color: #730217;
+  text-decoration: underline;
 }/*# sourceMappingURL=main.css.map */
