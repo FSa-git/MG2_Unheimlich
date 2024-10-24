@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'mixins' as m; 
 
 $headings: (
     h1: 80px,
@@ -9,27 +10,7 @@ $headings: (
     h6: 5px
 );
 
-.title {
-    font-family: variables.$font_special;
-    font-size: 150px;
-    color: white;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    cursor: pointer;
 
-    &:hover {
-        text-shadow: 4px 4px 10px variables.$color_main;
-        letter-spacing: 3px;
-        transition: all 0.3s ease 0s;   
-    }
-    
-    &.mol:hover{
-        text-shadow: 4px 4px 10px variables.$color_font;
-        letter-spacing: 3px;
-        transition: all 0.3s ease 0s;   
-    }
-}
 
 /* Schriftgroesse für h1 bis h4 */
 @each $heading, $size in $headings {
@@ -45,15 +26,60 @@ $headings: (
     }
 }
 
-p{
-    padding: 20px;
-    font-size: 1.2rem;
+HTML {
+    @include m.font-style();
 
-    &.centered{
-        text-align: center;
+    DIV {
+        @include m.font-style();
+
+        p {
+            @include m.font-style(2em, normal);
+            padding: 20px;
+        
+            &.centered{
+                text-align: center;
+            }
+        }
+        
+        q{
+            font-size: 22px;
+        }
+
+        #hDiv, .buttonDiv{
+            BUTTON, A {
+                @include m.font-style(20px, normal);   
+            }
+        }
+
+        #horror-table{
+            @include m.font-style(20px, normal);
+            text-align: center;
+
+            td.red{
+                @include m.font-style(25px, bold);
+            }
+        }
+        
+        .title {
+            font-family: variables.$font_special;
+            font-size: 150px;
+            color: white;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            cursor: pointer;
+        
+            &:hover {
+                text-shadow: 4px 4px 10px variables.$color_main;
+                letter-spacing: 3px;
+                transition: all 0.3s ease 0s;   
+            }
+            
+            &.mol:hover{
+                text-shadow: 4px 4px 10px variables.$color_font;
+                letter-spacing: 3px;
+                transition: all 0.3s ease 0s;   
+            }
+        }
     }
-}
-
-q{
-    font-size: 22px;
 }

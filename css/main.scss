@@ -1,6 +1,6 @@
 @use 'variables';
 @use 'typo';
-@use 'mixins';
+@use 'mixins' as m;
 
 @keyframes growShrink {
     0% {
@@ -14,299 +14,275 @@
     }
 }
 
-@mixin flex-center($direction: row){
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $direction;
-}
-
-html, body {
-    scroll-behavior: smooth;
+HTML {
     color: variables.$color_font2;
-    font-family: variables.$font;
-}
-
-div {
-    margin-bottom: 25px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
+    // font-family: variables.$font;
     
-    font-family: variables.$font;
+    scroll-behavior: smooth;
 
-    .combined {
-        display: flex;
-        flex-direction: column;
+    BODY {
+        @include m.flex-center();
+
+        background-image: linear-gradient(
+            to top, black 40%, variables.$color_sub 100%
+        );
+
+        DIV {
+            
+            @include m.center;
+            
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            margin-bottom: 25px;
+
+            &.container {
+                @include m.flex-center(column);
+
+                width: 100%;
+            
+                p{
+                    color: variables.$color_font2;
+
+                    // font-size: 2em;
+                } 
+            }
+            
+            #header {
+                @include m.flex-center(column);
+
+                height: 100vh;
+                margin-top: 5px;
+            }
         
-        DIV:nth-child(2n + 1){
-            margin-bottom: 0;
-        }
-    }
+            .combined {
+                display: flex;
+                flex-direction: column;
+                
+                DIV:nth-child(2n + 1){
+                    margin-bottom: 0;
+                }
+            }
+        
+            #hDiv, .buttonDiv{
+                display: flex;
+                flex-direction: column;
+        
+                BUTTON, A{
+                    height: 40px;
+                    width: 180px;
+                    margin-bottom: 10px;
 
-    #hDiv, .buttonDiv{
-        display: flex;
-        flex-direction: column;
+                    border: none;
+                    border-radius: 15px;
 
-        BUTTON, A{
-            cursor: pointer;
-            margin-bottom: 10px;
-            font-size: 20px;
-            border: none;
-            border-radius: 15px;
-            height: 40px;
-            width: 180px;
-            font-family: variables.$font;
+                    // font-family: variables.$font;
+                    // font-size: 20px;
+                    
+                    cursor: pointer;
+        
+                    &:nth-child(2n) {
+                        background: variables.$color_font2;
+                        color: variables.$color_main;
 
-            &:nth-child(2n) {
-                background: variables.$color_font2;
-                color: variables.$color_main;
-                transition: font-weight, transform ease 0.5s;
-                &:hover {
-                    background-color: darken($color: variables.$color_font2, $amount: 20%);
-                    transform: scale(1.2);
-                    font-weight: bold;
+                        transition: font-weight, transform ease 0.5s;
+                        &:hover {
+                            background-color: darken($color: variables.$color_font2, $amount: 10%);
+                            font-weight: bold;
+                            
+                            transform: scale(1.2);
+                        }
+                    }
+        
+                    &:nth-child(2n + 1) {
+                        background: variables.$color_sub;
+                        color: variables.$color_font2;
+
+                        transition: font-weight, transform ease 0.5s;
+        
+                        &:hover {
+                            background-color: lighten($color: variables.$color_sub, $amount: 10%);
+                            font-weight: bold;
+
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+        
+                A {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+        
+                    text-decoration: none;
+                }
+            }
+        
+            #buttonsDiv, #hDiv, #inputDiv {
+                margin-bottom: 100px;
+            }
+
+            input {
+                padding: 10px;
+                margin: 10px 0;
+
+                border-radius: 5px;
+                border: 3px solid variables.$color_main ;
+            
+                &:focus {
+                    outline: none;
+                    border: 3px solid variables.$color_font;
+                }
+            
+                &#example {
+                    width: 50%;
+                }
+            
+                &#answer {
+                    width: 100%;
                 }
             }
 
-            &:nth-child(2n + 1) {
-                background: variables.$color_sub;
-                color: variables.$color_font2;
-                transition: font-weight, transform ease 0.5s;
+            #horror-table{
+                width: 80%;
 
-                &:hover {
-                    background-color: lighten($color: variables.$color_sub, $amount: 10%);
-                    transform: scale(1.2);
-                    font-weight: bold;
+                border-collapse: collapse;
+
+                // font-size: 20px;
+                // text-align: center;
+            
+                margin-bottom: 300px;
+            
+                tr {
+                    &:hover {
+                        background-color: lighten($color: variables.$color_main, $amount: 10%);
+                    }
+                }
+            
+                td.red {       
+                    color: variables.$color_font;
+                    // font-size: 25px;
+                    // font-weight: bold;
+                }
+
+                TH, TD {
+                    border: white 1px solid;
+                    padding: 20px;
+                }
+            
+            }
+
+            .radio-form {
+                @include m.flex-center(column);
+
+                #options {
+                    margin-bottom: 0;
+                    gap: 10px;
+
+                    display: block;
+
+                    input[type="radio"] {
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 10px;
+
+
+                        border-radius: 50%;
+                        border: 5px solid variables.$color_font2;
+
+                        position: relative;
+                        vertical-align: middle;
+                        appearance: none;
+                        
+                        cursor: pointer;
+                    
+                        &:checked {
+                            background-color: variables.$color_main;
+                        }
+                    
+                        &:focus {
+                            outline: none;
+                            box-shadow: 0 0 0 3px rgba(variables.$color_main, 0.5);
+                        }
+                    
+                        &:before {
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            top: 50%;
+                            left: 50%;
+
+                            background-color: variables.$color_font;
+                            
+                            display: block;
+                            position: absolute;
+
+                            transform: translate(-50%, -50%) scale(0);
+                            transition: transform 0.2s ease-in-out;
+
+                            content: '';
+                        }
+                    
+                        &:checked:before {
+                            transform: translate(-50%, -50%) scale(1);
+                        }
+                    }
+                }
+
+                LABEL {
+                    margin-left: 0;
+
+                    cursor: pointer;
                 }
             }
-        }
 
-        A {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            .image-gallery {
+                gap: 20px;
+                padding: 20px;
 
-            text-decoration: none;
-        }
-    }
+                display: flex;
+                justify-content: space-between;
+            
+                .image-item {
+                    text-align: center;
+                    width: 30%;
+            
+                    img {
+                        width: 100%; 
+                        height: 300px;
 
-    #buttonsDiv, #hDiv, #inputDiv {
-        margin-bottom: 100px;
-    }
+                        border-radius: 10px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-}
+                        transition: transform 0.3s ease;
 
-#hDiv, .buttonDiv {
-    display: flex;
-    flex-direction: column;
-
-    button {
-        cursor: pointer;
-        margin-bottom: 10px;
-        font-size: 20px;
-        border: none;
-        border-radius: 15px;
-        height: 40px;
-        width: 180px;
-        font-family: variables.$font;
-        transition: font-weight, transform ease 0.5s;
-
-        &.btn-submit {
-            background: variables.$color_main; // Farbe für Submit-Button
-            color: variables.$color_font2;
-
-            &:hover {
-                background-color: darken(variables.$color_main, 10%);
-                transform: scale(1.05);
-                font-weight: bold;
+                        object-fit: cover;
+                    }
+            
+                    figcaption {
+                        margin-top: 10px;
+                    }
+            
+                    &:hover img {
+                        transform: scale(1.05);
+                        
+                        cursor: pointer;
+                    }
+                    &:hover figcaption {
+                        font-weight: bold;
+                        text-decoration: underline;
+                        color: variables.$color_sub;
+                    }
+                }
             }
-        }
 
-        &.btn-close {
-            background: variables.$color_font2; // Farbe für Close-Button
-            color: variables.$color_main;
-
-            &:hover {
-                background-color: darken(variables.$color_font2, 10%);
-                transform: scale(1.05);
-                font-weight: bold;
+            #qouteLine{
+                width: 80%;
+                
+                border-color: variables.$color_font;
+                
+                animation: growShrink 8s infinite ease-in-out; 
             }
-        }
-    }
-}
-
-#buttonsDiv, #hDiv, #inputDiv {
-    margin-bottom: 100px;
-}
-
-body {
-    @include flex-center();
-
-    // Hintergrund 
-    background-image: linear-gradient(
-        to top, black 40%, variables.$color_sub 100%
-    );
-}
-
-.container {
-    @include flex-center(column);
-    width: 100%;
-
-    p{
-        color: variables.$color_font2;
-        font-size: 2em;
-    }
-}
-
-#header {
-    @include flex-center(column);
-    height: 100vh;
-    margin-top: 5px;
-}
-
-input {
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 3px solid variables.$color_main ;
-
-    &:focus {
-        outline: none;
-        border: 3px solid variables.$color_font;
-    }
-
-    &#example {
-        width: 50%;
-    }
-
-    &#answer {
-        width: 100%;
-    }
-}
-
-input[type="radio"] {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 5px solid variables.$color_font2;
-    position: relative;
-    margin-right: 10px;
-    cursor: pointer;
-    vertical-align: middle;
-
-    &:checked {
-        background-color: variables.$color_main;
-    }
-
-    &:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(variables.$color_main, 0.5);
-    }
-
-    &:before {
-        content: '';
-        display: block;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: variables.$color_font;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        transition: transform 0.2s ease-in-out;
-    }
-
-    &:checked:before {
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-.radio-form #options {
-    @include flex-center();
-    gap: 10px; /* Abstand zwischen den Radio-Optionen */
-}
-
-.radio-form label {
-    margin-left: 0;
-    cursor: pointer;
-}
-
-#qouteLine{
-    border-color: variables.$color_font;
-    width: 80%;
-    animation: growShrink 8s infinite ease-in-out; 
-}
-
-.radio-form {
-    @include flex-center(column);
-    #options {
-        display: block;
-        margin-bottom: 0;
-    }
-}
-
-#horror-table{
-    width: 80%;
-    border-collapse: collapse;
-    font-size: 20px;
-    text-align: center;
-
-    margin-bottom: 300px;
-
-    TH, TD {
-        border: white 1px solid;
-        padding: 20px;
-    }
-        tr {
-            &:hover {
-                background-color: lighten($color: variables.$color_main, $amount: 10%);
-            }
-        }
-
-        td.red {       
-            color: variables.$color_font;
-            font-size: 25px;
-            font-weight: bold;
-        }
-    }
-
-.image-gallery {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-
-    .image-item {
-        text-align: center;
-        width: 30%;
-
-        img {
-            width: 100%; 
-            height: 300px; /* Feste Höhe */
-            object-fit: cover; /* Bild wird bei Bedarf beschnitten */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        figcaption {
-            margin-top: 10px;
-        }
-
-        &:hover img {
-            cursor: pointer;
-            transform: scale(1.05);
-        }
-        &:hover figcaption {
-            font-weight: bold;
-            color: variables.$color_sub;
-            text-decoration: underline;
         }
     }
 }

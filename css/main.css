@@ -1,26 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap");
-.title {
-  font-family: "Creepster";
-  font-size: 150px;
-  color: white;
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  cursor: pointer;
-}
-.title:hover {
-  text-shadow: 4px 4px 10px #0D0D0D;
-  letter-spacing: 3px;
-  transition: all 0.3s ease 0s;
-}
-.title.mol:hover {
-  text-shadow: 4px 4px 10px #D90404;
-  letter-spacing: 3px;
-  transition: all 0.3s ease 0s;
-}
-
 /* Schriftgroesse für h1 bis h4 */
 .h1-dark {
   color: #D90404;
@@ -94,16 +74,62 @@
   margin: 10px;
 }
 
-p {
-  padding: 20px;
-  font-size: 1.2rem;
+HTML {
+  font-family: "Cinzel Decorative";
+  font-size: 16px;
+  font-weight: normal;
 }
-p.centered {
+HTML DIV {
+  font-family: "Cinzel Decorative";
+  font-size: 16px;
+  font-weight: normal;
+}
+HTML DIV p {
+  font-family: "Cinzel Decorative";
+  font-size: 2em;
+  font-weight: normal;
+  padding: 20px;
+}
+HTML DIV p.centered {
   text-align: center;
 }
-
-q {
+HTML DIV q {
   font-size: 22px;
+}
+HTML DIV #hDiv BUTTON, HTML DIV #hDiv A, HTML DIV .buttonDiv BUTTON, HTML DIV .buttonDiv A {
+  font-family: "Cinzel Decorative";
+  font-size: 20px;
+  font-weight: normal;
+}
+HTML DIV #horror-table {
+  font-family: "Cinzel Decorative";
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+}
+HTML DIV #horror-table td.red {
+  font-family: "Cinzel Decorative";
+  font-size: 25px;
+  font-weight: bold;
+}
+HTML DIV .title {
+  font-family: "Creepster";
+  font-size: 150px;
+  color: white;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+}
+HTML DIV .title:hover {
+  text-shadow: 4px 4px 10px #0D0D0D;
+  letter-spacing: 3px;
+  transition: all 0.3s ease 0s;
+}
+HTML DIV .title.mol:hover {
+  text-shadow: 4px 4px 10px #D90404;
+  letter-spacing: 3px;
+  transition: all 0.3s ease 0s;
 }
 
 @keyframes growShrink {
@@ -117,132 +143,37 @@ q {
     width: 20%; /* Zurück zur Anfangsbreite */
   }
 }
-html, body {
+HTML {
+  color: #DFD6D6;
   scroll-behavior: smooth;
-  color: #DFD6D6;
-  font-family: "Cinzel Decorative";
 }
-
-div {
-  margin-bottom: 25px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  font-family: "Cinzel Decorative";
-}
-div .combined {
-  display: flex;
-  flex-direction: column;
-}
-div .combined DIV:nth-child(2n+1) {
-  margin-bottom: 0;
-}
-div #hDiv, div .buttonDiv {
-  display: flex;
-  flex-direction: column;
-}
-div #hDiv BUTTON, div #hDiv A, div .buttonDiv BUTTON, div .buttonDiv A {
-  cursor: pointer;
-  margin-bottom: 10px;
-  font-size: 20px;
-  border: none;
-  border-radius: 15px;
-  height: 40px;
-  width: 180px;
-  font-family: "Cinzel Decorative";
-}
-div #hDiv BUTTON:nth-child(2n), div #hDiv A:nth-child(2n), div .buttonDiv BUTTON:nth-child(2n), div .buttonDiv A:nth-child(2n) {
-  background: #DFD6D6;
-  color: #0D0D0D;
-  transition: font-weight, transform ease 0.5s;
-}
-div #hDiv BUTTON:nth-child(2n):hover, div #hDiv A:nth-child(2n):hover, div .buttonDiv BUTTON:nth-child(2n):hover, div .buttonDiv A:nth-child(2n):hover {
-  background-color: #b29d9d;
-  transform: scale(1.2);
-  font-weight: bold;
-}
-div #hDiv BUTTON:nth-child(2n+1), div #hDiv A:nth-child(2n+1), div .buttonDiv BUTTON:nth-child(2n+1), div .buttonDiv A:nth-child(2n+1) {
-  background: #730217;
-  color: #DFD6D6;
-  transition: font-weight, transform ease 0.5s;
-}
-div #hDiv BUTTON:nth-child(2n+1):hover, div #hDiv A:nth-child(2n+1):hover, div .buttonDiv BUTTON:nth-child(2n+1):hover, div .buttonDiv A:nth-child(2n+1):hover {
-  background-color: #a50321;
-  transform: scale(1.2);
-  font-weight: bold;
-}
-div #hDiv A, div .buttonDiv A {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-}
-div #buttonsDiv, div #hDiv, div #inputDiv {
-  margin-bottom: 100px;
-}
-
-#hDiv, .buttonDiv {
-  display: flex;
-  flex-direction: column;
-}
-#hDiv button, .buttonDiv button {
-  cursor: pointer;
-  margin-bottom: 10px;
-  font-size: 20px;
-  border: none;
-  border-radius: 15px;
-  height: 40px;
-  width: 180px;
-  font-family: "Cinzel Decorative";
-  transition: font-weight, transform ease 0.5s;
-}
-#hDiv button.btn-submit, .buttonDiv button.btn-submit {
-  background: #0D0D0D;
-  color: #DFD6D6;
-}
-#hDiv button.btn-submit:hover, .buttonDiv button.btn-submit:hover {
-  background-color: black;
-  transform: scale(1.05);
-  font-weight: bold;
-}
-#hDiv button.btn-close, .buttonDiv button.btn-close {
-  background: #DFD6D6;
-  color: #0D0D0D;
-}
-#hDiv button.btn-close:hover, .buttonDiv button.btn-close:hover {
-  background-color: #c9b9b9;
-  transform: scale(1.05);
-  font-weight: bold;
-}
-
-#buttonsDiv, #hDiv, #inputDiv {
-  margin-bottom: 100px;
-}
-
-body {
+HTML BODY {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   background-image: linear-gradient(to top, black 40%, #730217 100%);
 }
-
-.container {
+HTML BODY DIV {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+HTML BODY DIV.container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
 }
-.container p {
+HTML BODY DIV.container p {
   color: #DFD6D6;
-  font-size: 2em;
 }
-
-#header {
+HTML BODY DIV #header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -250,136 +181,166 @@ body {
   height: 100vh;
   margin-top: 5px;
 }
-
-input {
+HTML BODY DIV .combined {
+  display: flex;
+  flex-direction: column;
+}
+HTML BODY DIV .combined DIV:nth-child(2n+1) {
+  margin-bottom: 0;
+}
+HTML BODY DIV #hDiv, HTML BODY DIV .buttonDiv {
+  display: flex;
+  flex-direction: column;
+}
+HTML BODY DIV #hDiv BUTTON, HTML BODY DIV #hDiv A, HTML BODY DIV .buttonDiv BUTTON, HTML BODY DIV .buttonDiv A {
+  height: 40px;
+  width: 180px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+HTML BODY DIV #hDiv BUTTON:nth-child(2n), HTML BODY DIV #hDiv A:nth-child(2n), HTML BODY DIV .buttonDiv BUTTON:nth-child(2n), HTML BODY DIV .buttonDiv A:nth-child(2n) {
+  background: #DFD6D6;
+  color: #0D0D0D;
+  transition: font-weight, transform ease 0.5s;
+}
+HTML BODY DIV #hDiv BUTTON:nth-child(2n):hover, HTML BODY DIV #hDiv A:nth-child(2n):hover, HTML BODY DIV .buttonDiv BUTTON:nth-child(2n):hover, HTML BODY DIV .buttonDiv A:nth-child(2n):hover {
+  background-color: #c9b9b9;
+  font-weight: bold;
+  transform: scale(1.2);
+}
+HTML BODY DIV #hDiv BUTTON:nth-child(2n+1), HTML BODY DIV #hDiv A:nth-child(2n+1), HTML BODY DIV .buttonDiv BUTTON:nth-child(2n+1), HTML BODY DIV .buttonDiv A:nth-child(2n+1) {
+  background: #730217;
+  color: #DFD6D6;
+  transition: font-weight, transform ease 0.5s;
+}
+HTML BODY DIV #hDiv BUTTON:nth-child(2n+1):hover, HTML BODY DIV #hDiv A:nth-child(2n+1):hover, HTML BODY DIV .buttonDiv BUTTON:nth-child(2n+1):hover, HTML BODY DIV .buttonDiv A:nth-child(2n+1):hover {
+  background-color: #a50321;
+  font-weight: bold;
+  transform: scale(1.2);
+}
+HTML BODY DIV #hDiv A, HTML BODY DIV .buttonDiv A {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+HTML BODY DIV #buttonsDiv, HTML BODY DIV #hDiv, HTML BODY DIV #inputDiv {
+  margin-bottom: 100px;
+}
+HTML BODY DIV input {
   padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
   border: 3px solid #0D0D0D;
 }
-input:focus {
+HTML BODY DIV input:focus {
   outline: none;
   border: 3px solid #D90404;
 }
-input#example {
+HTML BODY DIV input#example {
   width: 50%;
 }
-input#answer {
+HTML BODY DIV input#answer {
   width: 100%;
 }
-
-input[type=radio] {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 5px solid #DFD6D6;
-  position: relative;
-  margin-right: 10px;
-  cursor: pointer;
-  vertical-align: middle;
-}
-input[type=radio]:checked {
-  background-color: #0D0D0D;
-}
-input[type=radio]:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(13, 13, 13, 0.5);
-}
-input[type=radio]:before {
-  content: "";
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #D90404;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.2s ease-in-out;
-}
-input[type=radio]:checked:before {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.radio-form #options {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 10px; /* Abstand zwischen den Radio-Optionen */
-}
-
-.radio-form label {
-  margin-left: 0;
-  cursor: pointer;
-}
-
-#qouteLine {
-  border-color: #D90404;
+HTML BODY DIV #horror-table {
   width: 80%;
-  animation: growShrink 8s infinite ease-in-out;
+  border-collapse: collapse;
+  margin-bottom: 300px;
 }
-
-.radio-form {
+HTML BODY DIV #horror-table tr:hover {
+  background-color: #272727;
+}
+HTML BODY DIV #horror-table td.red {
+  color: #D90404;
+}
+HTML BODY DIV #horror-table TH, HTML BODY DIV #horror-table TD {
+  border: white 1px solid;
+  padding: 20px;
+}
+HTML BODY DIV .radio-form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.radio-form #options {
-  display: block;
+HTML BODY DIV .radio-form #options {
   margin-bottom: 0;
+  gap: 10px;
+  display: block;
 }
-
-#horror-table {
-  width: 80%;
-  border-collapse: collapse;
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 300px;
+HTML BODY DIV .radio-form #options input[type=radio] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 5px solid #DFD6D6;
+  position: relative;
+  vertical-align: middle;
+  appearance: none;
+  cursor: pointer;
 }
-#horror-table TH, #horror-table TD {
-  border: white 1px solid;
-  padding: 20px;
+HTML BODY DIV .radio-form #options input[type=radio]:checked {
+  background-color: #0D0D0D;
 }
-#horror-table tr:hover {
-  background-color: #272727;
+HTML BODY DIV .radio-form #options input[type=radio]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 13, 13, 0.5);
 }
-#horror-table td.red {
-  color: #D90404;
-  font-size: 25px;
-  font-weight: bold;
+HTML BODY DIV .radio-form #options input[type=radio]:before {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  background-color: #D90404;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease-in-out;
+  content: "";
 }
-
-.image-gallery {
-  display: flex;
-  justify-content: space-between;
+HTML BODY DIV .radio-form #options input[type=radio]:checked:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+HTML BODY DIV .radio-form LABEL {
+  margin-left: 0;
+  cursor: pointer;
+}
+HTML BODY DIV .image-gallery {
   gap: 20px;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
 }
-.image-gallery .image-item {
+HTML BODY DIV .image-gallery .image-item {
   text-align: center;
   width: 30%;
 }
-.image-gallery .image-item img {
+HTML BODY DIV .image-gallery .image-item img {
   width: 100%;
-  height: 300px; /* Feste Höhe */
-  object-fit: cover; /* Bild wird bei Bedarf beschnitten */
+  height: 300px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  object-fit: cover;
 }
-.image-gallery .image-item figcaption {
+HTML BODY DIV .image-gallery .image-item figcaption {
   margin-top: 10px;
 }
-.image-gallery .image-item:hover img {
-  cursor: pointer;
+HTML BODY DIV .image-gallery .image-item:hover img {
   transform: scale(1.05);
+  cursor: pointer;
 }
-.image-gallery .image-item:hover figcaption {
+HTML BODY DIV .image-gallery .image-item:hover figcaption {
   font-weight: bold;
-  color: #730217;
   text-decoration: underline;
+  color: #730217;
+}
+HTML BODY DIV #qouteLine {
+  width: 80%;
+  border-color: #D90404;
+  animation: growShrink 8s infinite ease-in-out;
 }/*# sourceMappingURL=main.css.map */
