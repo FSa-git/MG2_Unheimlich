@@ -1,4 +1,4 @@
-# Uncanny / Unheimlich – A Media Design Project
+# Unheimlich – A Media Design Project
 
 ## About the Project
 This project was created as part of our media design studies in Germany. My friend and I worked together to gain our first experiences with **SCSS** while building a small website based on the theme **"Uncanny"** ("Unheimlich" in German).
