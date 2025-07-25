@@ -3,73 +3,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap");
 /* Schriftgroesse für h1 bis h4 */
 .h1-dark {
-  color: #D90404;
+  color: #d90404;
   font-size: 80px;
   margin: 10px;
 }
 
 .h1-light {
-  color: #DFD6D6;
+  color: #dfd6d6;
   font-size: 80px;
   margin: 10px;
 }
 
 .h2-dark {
-  color: #D90404;
+  color: #d90404;
   font-size: 60px;
   margin: 10px;
 }
 
 .h2-light {
-  color: #DFD6D6;
+  color: #dfd6d6;
   font-size: 60px;
   margin: 10px;
 }
 
 .h3-dark {
-  color: #D90404;
+  color: #d90404;
   font-size: 40px;
   margin: 10px;
 }
 
 .h3-light {
-  color: #DFD6D6;
+  color: #dfd6d6;
   font-size: 40px;
   margin: 10px;
 }
 
 .h4-dark {
-  color: #D90404;
+  color: #d90404;
   font-size: 20px;
   margin: 10px;
 }
 
 .h4-light {
-  color: #DFD6D6;
+  color: #dfd6d6;
   font-size: 20px;
   margin: 10px;
 }
 
 .h5-dark {
-  color: #D90404;
+  color: #d90404;
   font-size: 10px;
   margin: 10px;
 }
 
 .h5-light {
-  color: #DFD6D6;
+  color: #dfd6d6;
   font-size: 10px;
   margin: 10px;
 }
 
 .h6-dark {
-  color: #D90404;
+  color: #d90404;
   font-size: 5px;
   margin: 10px;
 }
 
 .h6-light {
-  color: #DFD6D6;
+  color: #dfd6d6;
   font-size: 5px;
   margin: 10px;
 }
@@ -96,7 +96,10 @@ HTML DIV p.centered {
 HTML DIV q {
   font-size: 22px;
 }
-HTML DIV #hDiv BUTTON, HTML DIV #hDiv A, HTML DIV .buttonDiv BUTTON, HTML DIV .buttonDiv A {
+HTML DIV #hDiv BUTTON,
+HTML DIV #hDiv A,
+HTML DIV .buttonDiv BUTTON,
+HTML DIV .buttonDiv A {
   font-family: "Cinzel Decorative";
   font-size: 20px;
   font-weight: normal;
@@ -122,12 +125,12 @@ HTML DIV .title {
   cursor: pointer;
 }
 HTML DIV .title:hover {
-  text-shadow: 4px 4px 10px #0D0D0D;
+  text-shadow: 4px 4px 10px #0d0d0d;
   letter-spacing: 3px;
   transition: all 0.3s ease 0s;
 }
 HTML DIV .title.mol:hover {
-  text-shadow: 4px 4px 10px #D90404;
+  text-shadow: 4px 4px 10px #d90404;
   letter-spacing: 3px;
   transition: all 0.3s ease 0s;
 }
@@ -144,7 +147,7 @@ HTML DIV .title.mol:hover {
   }
 }
 HTML {
-  color: #DFD6D6;
+  color: #dfd6d6;
   scroll-behavior: smooth;
 }
 HTML BODY {
@@ -171,7 +174,7 @@ HTML BODY DIV.container {
   width: 100%;
 }
 HTML BODY DIV.container p {
-  color: #DFD6D6;
+  color: #dfd6d6;
 }
 HTML BODY DIV #header {
   display: flex;
@@ -185,14 +188,18 @@ HTML BODY DIV .combined {
   display: flex;
   flex-direction: column;
 }
-HTML BODY DIV .combined DIV:nth-child(2n+1) {
+HTML BODY DIV .combined DIV:nth-child(2n + 1) {
   margin-bottom: 0;
 }
-HTML BODY DIV #hDiv, HTML BODY DIV .buttonDiv {
+HTML BODY DIV #hDiv,
+HTML BODY DIV .buttonDiv {
   display: flex;
   flex-direction: column;
 }
-HTML BODY DIV #hDiv BUTTON, HTML BODY DIV #hDiv A, HTML BODY DIV .buttonDiv BUTTON, HTML BODY DIV .buttonDiv A {
+HTML BODY DIV #hDiv BUTTON,
+HTML BODY DIV #hDiv A,
+HTML BODY DIV .buttonDiv BUTTON,
+HTML BODY DIV .buttonDiv A {
   height: 40px;
   width: 180px;
   margin-bottom: 10px;
@@ -200,44 +207,59 @@ HTML BODY DIV #hDiv BUTTON, HTML BODY DIV #hDiv A, HTML BODY DIV .buttonDiv BUTT
   border-radius: 15px;
   cursor: pointer;
 }
-HTML BODY DIV #hDiv BUTTON:nth-child(2n), HTML BODY DIV #hDiv A:nth-child(2n), HTML BODY DIV .buttonDiv BUTTON:nth-child(2n), HTML BODY DIV .buttonDiv A:nth-child(2n) {
-  background: #DFD6D6;
-  color: #0D0D0D;
+HTML BODY DIV #hDiv BUTTON:nth-child(2n),
+HTML BODY DIV #hDiv A:nth-child(2n),
+HTML BODY DIV .buttonDiv BUTTON:nth-child(2n),
+HTML BODY DIV .buttonDiv A:nth-child(2n) {
+  background: #dfd6d6;
+  color: #0d0d0d;
   transition: font-weight, transform ease 0.5s;
 }
-HTML BODY DIV #hDiv BUTTON:nth-child(2n):hover, HTML BODY DIV #hDiv A:nth-child(2n):hover, HTML BODY DIV .buttonDiv BUTTON:nth-child(2n):hover, HTML BODY DIV .buttonDiv A:nth-child(2n):hover {
-  background-color: #c9b9b9;
+HTML BODY DIV #hDiv BUTTON:nth-child(2n):hover,
+HTML BODY DIV #hDiv A:nth-child(2n):hover,
+HTML BODY DIV .buttonDiv BUTTON:nth-child(2n):hover,
+HTML BODY DIV .buttonDiv A:nth-child(2n):hover {
+  background-color: rgb(200.6438356164, 185.3561643836, 185.3561643836);
   font-weight: bold;
   transform: scale(1.2);
 }
-HTML BODY DIV #hDiv BUTTON:nth-child(2n+1), HTML BODY DIV #hDiv A:nth-child(2n+1), HTML BODY DIV .buttonDiv BUTTON:nth-child(2n+1), HTML BODY DIV .buttonDiv A:nth-child(2n+1) {
+HTML BODY DIV #hDiv BUTTON:nth-child(2n + 1),
+HTML BODY DIV #hDiv A:nth-child(2n + 1),
+HTML BODY DIV .buttonDiv BUTTON:nth-child(2n + 1),
+HTML BODY DIV .buttonDiv A:nth-child(2n + 1) {
   background: #730217;
-  color: #DFD6D6;
+  color: #dfd6d6;
   transition: font-weight, transform ease 0.5s;
 }
-HTML BODY DIV #hDiv BUTTON:nth-child(2n+1):hover, HTML BODY DIV #hDiv A:nth-child(2n+1):hover, HTML BODY DIV .buttonDiv BUTTON:nth-child(2n+1):hover, HTML BODY DIV .buttonDiv A:nth-child(2n+1):hover {
-  background-color: #a50321;
+HTML BODY DIV #hDiv BUTTON:nth-child(2n + 1):hover,
+HTML BODY DIV #hDiv A:nth-child(2n + 1):hover,
+HTML BODY DIV .buttonDiv BUTTON:nth-child(2n + 1):hover,
+HTML BODY DIV .buttonDiv A:nth-child(2n + 1):hover {
+  background-color: rgb(165.1282051282, 2.8717948718, 33.0256410256);
   font-weight: bold;
   transform: scale(1.2);
 }
-HTML BODY DIV #hDiv A, HTML BODY DIV .buttonDiv A {
+HTML BODY DIV #hDiv A,
+HTML BODY DIV .buttonDiv A {
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
 }
-HTML BODY DIV #buttonsDiv, HTML BODY DIV #hDiv, HTML BODY DIV #inputDiv {
+HTML BODY DIV #buttonsDiv,
+HTML BODY DIV #hDiv,
+HTML BODY DIV #inputDiv {
   margin-bottom: 100px;
 }
 HTML BODY DIV input {
   padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
-  border: 3px solid #0D0D0D;
+  border: 3px solid #0d0d0d;
 }
 HTML BODY DIV input:focus {
   outline: none;
-  border: 3px solid #D90404;
+  border: 3px solid #d90404;
 }
 HTML BODY DIV input#example {
   width: 50%;
@@ -251,12 +273,13 @@ HTML BODY DIV #horror-table {
   margin-bottom: 300px;
 }
 HTML BODY DIV #horror-table tr:hover {
-  background-color: #272727;
+  background-color: rgb(38.5, 38.5, 38.5);
 }
 HTML BODY DIV #horror-table td.red {
-  color: #D90404;
+  color: #d90404;
 }
-HTML BODY DIV #horror-table TH, HTML BODY DIV #horror-table TD {
+HTML BODY DIV #horror-table TH,
+HTML BODY DIV #horror-table TD {
   border: white 1px solid;
   padding: 20px;
 }
@@ -271,38 +294,38 @@ HTML BODY DIV .radio-form #options {
   gap: 10px;
   display: block;
 }
-HTML BODY DIV .radio-form #options input[type=radio] {
+HTML BODY DIV .radio-form #options input[type="radio"] {
   width: 20px;
   height: 20px;
   margin-right: 10px;
   border-radius: 50%;
-  border: 5px solid #DFD6D6;
+  border: 5px solid #dfd6d6;
   position: relative;
   vertical-align: middle;
   appearance: none;
   cursor: pointer;
 }
-HTML BODY DIV .radio-form #options input[type=radio]:checked {
-  background-color: #0D0D0D;
+HTML BODY DIV .radio-form #options input[type="radio"]:checked {
+  background-color: #0d0d0d;
 }
-HTML BODY DIV .radio-form #options input[type=radio]:focus {
+HTML BODY DIV .radio-form #options input[type="radio"]:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(13, 13, 13, 0.5);
 }
-HTML BODY DIV .radio-form #options input[type=radio]:before {
+HTML BODY DIV .radio-form #options input[type="radio"]:before {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   top: 50%;
   left: 50%;
-  background-color: #D90404;
+  background-color: #d90404;
   display: block;
   position: absolute;
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0.2s ease-in-out;
   content: "";
 }
-HTML BODY DIV .radio-form #options input[type=radio]:checked:before {
+HTML BODY DIV .radio-form #options input[type="radio"]:checked:before {
   transform: translate(-50%, -50%) scale(1);
 }
 HTML BODY DIV .radio-form LABEL {
@@ -341,7 +364,7 @@ HTML BODY DIV .image-gallery .image-item:hover figcaption {
 }
 HTML BODY DIV #qouteLine {
   width: 80%;
-  border-color: #D90404;
+  border-color: #d90404;
   animation: growShrink 8s infinite ease-in-out;
 }
 
@@ -364,6 +387,15 @@ HTML BODY DIV #qouteLine {
   }
 }
 @media (max-width: 600px) {
+  HTML,
+  BODY {
+    width: 100%;
+    min-width: 0;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
   HTML BODY {
     flex-direction: column !important;
     padding: 0;
@@ -390,11 +422,14 @@ HTML BODY DIV #qouteLine {
   #horror-table {
     font-size: 12px !important;
   }
-  #horror-table th, #horror-table td {
+  #horror-table th,
+  #horror-table td {
     padding: 8px !important;
   }
-  input, button, a {
+  input,
+  button,
+  a {
     font-size: 16px !important;
     width: 100% !important;
   }
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */

@@ -311,6 +311,16 @@ HTML {
 
 // Smartphone (max-width: 600px)
 @media (max-width: 600px) {
+
+    HTML, BODY {
+    width: 100%;
+    min-width: 0;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+    
   HTML BODY {
     flex-direction: column !important;
     padding: 0;
@@ -345,5 +355,3 @@ HTML {
     width: 100% !important;
   }
 }
-
-// ...existing code...
